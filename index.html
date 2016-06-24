@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+</head>
+
+<body>
+    <aside>
+      <ul>
+        <li>dsfdssfsfdsdf
+        </li>
+        <li>dsfdssfsfdsdf
+        </li>
+        <li>dsfdssfsfdsdf
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+      <a id="menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+          <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+        </svg>
+      </a>
+      <a id="menu2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+          <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+        </svg>
+      </a>
+      testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo testo
+    </main>
+
+    <script>
+      (function (window, document, undefined) {
+        var menu2 = document.querySelector('#menu2');
+        var menu = document.querySelector('#menu');
+        var main = document.querySelector('main');
+        var drawer = document.querySelector('aside');
+        var mq = window.matchMedia( "(max-width: 599px)" );
+        mq.addListener(doSomething);
+        function doSomething(mq) {
+          if (mq.matches) {
+            drawer.classList.remove('close');
+            main.classList.remove('close');
+            menu.addEventListener('click', function(e) {
+              drawer.classList.remove('close');
+              main.classList.remove('close');
+              drawer.classList.toggle('open');
+              main.classList.toggle('open');
+              e.stopPropagation();
+            });
+            main.addEventListener('click', function(f) {
+              drawer.classList.remove('open');
+              main.classList.remove('open');
+              f.stopPropagation();
+            });
+          } else {
+            drawer.classList.remove('open');
+            main.classList.remove('open');
+            menu2.addEventListener('click', function(g) {
+              drawer.classList.toggle('close');
+              main.classList.toggle('close');
+              g.stopPropagation();
+            });
+            main.addEventListener('click', function(h) {
+              drawer.classList.add('close');
+              main.classList.add('close');
+              h.stopPropagation();
+            });
+          }
+        }
+        doSomething(mq);
+      })(window, document);
+    </script>
+</body>
+
+</html>
