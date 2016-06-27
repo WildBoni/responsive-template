@@ -1,27 +1,45 @@
-@media (min-width: 600px) {
-  #menu svg{ display: none;
+@media (max-width: 599px) {
+  .side {
+      -webkit-transform: translate(-300px, 0);
+      transform: translate(-300px, 0);
+      transition: transform 0.3s ease;
   }
-  aside {
-      background-color: #74769c;
-      width: 300px;
-      height: 100%;
-      position: absolute;
+
+  .side.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  main{
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    transition: transform 0.3s ease;
+  }
+  main.open{
+    -webkit-transform: translate(300px, 0);
+    transform: translate(300px, 0);
+    transition: transform 0.3s ease;
+  }
+}
+
+@media (min-width: 600px) {
+  .side {
       -webkit-transform: translate(0, 0);
       transform: translate(0, 0);
       transition: transform 0.3s ease;
   }
 
-  aside.close {
+  .side.close {
     -webkit-transform: translate(-300px, 0);
     transform: translate(-300px, 0);
   }
 
-  body {
+  /*body {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  }
+  }*/
 
   main{
     -webkit-transform: translate(300px, 0);
@@ -36,52 +54,21 @@
 }
 
 @media (min-width: 800px) {
-  /*main > #menu:after {    content: 'Td';  }*/
+
   #menu svg{ display: none;
   }
-  #menu2 svg{ display: none;
-  }
-  main.open{
+  main,
+  main.open,
+  main.close {
     -webkit-transform: translate(300px, 0);
     transform: translate(300px, 0);
     transition: transform 0.3s ease;
   }
-  aside.open{
-    width: 300px;
-    height: 100%;
-    position: absolute;
+  .side,
+  .side.close,
+  .side.close {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
-    transition: transform 0.3s ease;
-  }
-}
-
-@media (max-width: 599px) {
-  #menu2 svg{ display: none;
-  }
-  aside {
-      background-color: #74769c;
-      width: 300px;
-      height: 100%;
-      position: absolute;
-      -webkit-transform: translate(0, 0);
-      transform: translate(0, 0);
-      transition: transform 0.3s ease;
-  }
-
-  aside.open {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-
-  main{
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-    transition: transform 0.3s ease;
-  }
-  main.open{
-    -webkit-transform: translate(300px, 0);
-    transform: translate(300px, 0);
     transition: transform 0.3s ease;
   }
 }

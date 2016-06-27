@@ -1,21 +1,43 @@
-html, body {
+html,
+body,
+p {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
 }
 
+body{
+  overflow: hidden;
+}
+
+header{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #7af6d6;
+  height: 15vh;
+}
+
+footer{
+    height: 5vh;
+    background-color: #7c8670;
+}
+
 main {
     background-color: #a2a362;
     width: 100%;
-    height: 100%;
+    height: 80vh;
+
+}
+
+.side{
+  background-color: #74769c;
+  width: 300px;
+  position: absolute;
+  height: 80vh;
 }
 
 a#menu svg {
-  width: 40px;
-  fill: #000;
-}
-a#menu2 svg {
   width: 40px;
   fill: #000;
 }
