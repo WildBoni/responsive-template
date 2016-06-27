@@ -12,18 +12,20 @@ body{
 }
 
 header{
-  display: flex;
-  flex-wrap: wrap;
+  /*display: flex;
+  flex-wrap: wrap;*/
   background-color: #7af6d6;
   height: 15vh;
 }
 
 footer{
+    width: 100%;
     height: 5vh;
     background-color: #7c8670;
 }
 
-main {
+main,
+main.close {
     background-color: #a2a362;
     width: 100%;
     height: 80vh;

@@ -9,17 +9,6 @@
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-
-  main{
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-    transition: transform 0.3s ease;
-  }
-  main.open{
-    -webkit-transform: translate(300px, 0);
-    transform: translate(300px, 0);
-    transition: transform 0.3s ease;
-  }
 }
 
 @media (min-width: 600px) {
@@ -29,44 +18,52 @@
       transition: transform 0.3s ease;
   }
 
+  main {
+      width: calc(100% - 300px);
+      -webkit-transform: translate(300px, 0);
+      transform: translate(300px, 0);
+      transition: transform 0.3s ease;
+  }
+
+  main.close {
+      width: 100%;
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+      transition: transform 0.3s ease;
+  }
+
+
   .side.close {
     -webkit-transform: translate(-300px, 0);
     transform: translate(-300px, 0);
   }
+}
 
-  /*body {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  }*/
-
-  main{
-    -webkit-transform: translate(300px, 0);
-    transform: translate(300px, 0);
-    transition: transform 0.3s ease;
+@media (min-width: 800px) {
+  #menu svg{ display: none;
   }
-  main.close{
+  body {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  main,
+  main.close {
+    width: calc(100% - 300px);
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
     transition: transform 0.3s ease;
   }
-}
 
-@media (min-width: 800px) {
+  header{
+    width: 100%;
+  }
 
-  #menu svg{ display: none;
-  }
-  main,
-  main.open,
-  main.close {
-    -webkit-transform: translate(300px, 0);
-    transform: translate(300px, 0);
-    transition: transform 0.3s ease;
-  }
   .side,
-  .side.close,
+  .side.open,
   .side.close {
+    position: relative;
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
     transition: transform 0.3s ease;

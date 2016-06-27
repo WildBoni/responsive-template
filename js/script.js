@@ -7,12 +7,10 @@
 
   function e() {
     drawer.classList.toggle('open');
-    main.classList.toggle('open');
     // e.stopPropagation();
   }
   function f() {
     drawer.classList.remove('open');
-    main.classList.remove('open');
     // f.stopPropagation();
   }
   function g() {
@@ -28,11 +26,15 @@
 
   function doSomething(mq) {
     if (mq.matches) {
+      main.classList.remove('close');
+      drawer.classList.remove('close');
       main.removeEventListener('click', h);
       menu.removeEventListener('click', g);
       menu.addEventListener('click', e);
       main.addEventListener('click', f);
     } else {
+      drawer.classList.remove('open');
+      drawer.classList.remove('open');
       main.removeEventListener('click', f);
       menu.removeEventListener('click', e);
       menu.addEventListener('click', g);
