@@ -25,13 +25,18 @@ header{
 }
 
 footer{
+  background-color: #7c8670;
+}
+
+footer, .push{
     width: 100%;
-    background-color: #7c8670;
+    height: 4em;
 }
 footer p{
   padding: 0;
   margin: 0;
 }
+
 main,
 main.close {
     background-color: #a2a362;
@@ -65,4 +70,12 @@ a#menu svg {
 
 .container{
   position: relative;
+  height: 100%;
+}
+
+.wrapper{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
 }
