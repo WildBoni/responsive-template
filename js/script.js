@@ -2,44 +2,46 @@
   var menu = document.querySelector('#menu');
   var main = document.querySelector('main');
   var drawer = document.querySelector('.side');
-  var mq = window.matchMedia( "(max-width: 599px)" );
-  mq.addListener(doSomething);
+  var matcher = window.matchMedia( "(max-width: 599px)" );
+  matcher.addListener(chooseLayout);
 
-  function e() {
+// Define some functions to toggle the side panel with different media queries
+
+  function panelToggleButtonMobile() {
     drawer.classList.toggle('open');
-    // e.stopPropagation();
+    // panelToggleButtonMobile.stopPropagation();
   }
-  function f() {
+  function panelToggleAreaMobile() {
     drawer.classList.remove('open');
-    // f.stopPropagation();
+    // panelToggleAreaMobile.stopPropagation();
   }
-  function g() {
+  function panelToggleButtonTablet() {
     drawer.classList.toggle('close');
     main.classList.toggle('close');
-    // g.stopPropagation();
+    // panelToggleButtonTablet.stopPropagation();
   }
-  function h() {
+  function panelToggleAreaTablet() {
     drawer.classList.add('close');
     main.classList.add('close');
-    // h.stopPropagation();
+    // panelToggleAreaTablet.stopPropagation();
   }
 
-  function doSomething(mq) {
-    if (mq.matches) {
+  function chooseLayout(matcher) {
+    if (matcher.matches) {
       main.classList.remove('close');
       drawer.classList.remove('close');
-      main.removeEventListener('click', h);
-      menu.removeEventListener('click', g);
-      menu.addEventListener('click', e);
-      main.addEventListener('click', f);
+      main.removeEventListener('click', panelToggleAreaTablet);
+      menu.removeEventListener('click', panelToggleButtonTablet);
+      menu.addEventListener('click', panelToggleButtonMobile);
+      main.addEventListener('click', panelToggleAreaMobile);
     } else {
       drawer.classList.remove('open');
       drawer.classList.remove('open');
-      main.removeEventListener('click', f);
-      menu.removeEventListener('click', e);
-      menu.addEventListener('click', g);
-      main.addEventListener('click', h);
+      main.removeEventListener('click', panelToggleAreaMobile);
+      menu.removeEventListener('click', panelToggleButtonMobile);
+      menu.addEventListener('click', panelToggleButtonTablet);
+      main.addEventListener('click', panelToggleAreaTablet);
     }
   }
-  doSomething(mq);
+  chooseLayout(matcher);
 })(window, document);
